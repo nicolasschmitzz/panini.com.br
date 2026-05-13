@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Copa Do Mundo 2026 - Álbum Capa Dura Prata - FIFA WORLD CUP 2026™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F4F3F8;
+    color: #333;
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: #282B33;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  }
+  .logo-wrap { display: flex; align-items: center; }
+  .logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+  .header-right { display: flex; align-items: center; gap: 18px; }
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .icon-btn svg {
+    width: 22px; height: 22px;
+    fill: none; stroke: #fff;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .cart-count {
+    position: absolute;
+    top: -5px; right: -7px;
+    background: #f5c800; color: #111;
+    font-size: 9px; font-weight: bold;
+    border-radius: 50%;
+    width: 15px; height: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ─── BREADCRUMB ─── */
+  .breadcrumb {
+    padding: 7px 14px;
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+    border-bottom: 1px solid #e0dff0;
+    background: #F4F3F8;
+  }
+  .breadcrumb a { color: #555; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb .sep { margin: 0 4px; color: #bbb; }
+  .breadcrumb strong {
+    font-family: 'Nunito', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #D20303;
+  }
+
+  /* ─── PRODUCT ─── */
+  .product-wrap {
+    padding: 12px 14px 16px;
+    background: #F4F3F8;
+  }
+
+  .product-title {
+    font-family: 'Nunito', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #343D55;
+    line-height: 1.3;
+    margin-bottom: 14px;
+  }
+
+  /* Gallery */
+  .gallery {
+    background: #FFFFFF;
+    padding: 19px 0;
+    margin: 0 0 16px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery-badge {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 2;
+    background: #FFF200;
+    color: #000000;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px 12px;
+    margin: 0 5px;
+    line-height: 1.4;
+  }
+  .gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    cursor: grab;
+  }
+  .gallery-track::-webkit-scrollbar { display: none; }
+  .gallery-track:active { cursor: grabbing; }
+  .gallery-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallery-slide img {
+    width: 300px;
+    height: 280.31px;
+    display: block;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+  }
+  .gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .gallery-dots span {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #ccc;
+    display: block;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .gallery-dots span.on { background: #333; }
+  .gallery-thumbs {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .gallery-thumbs span {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #ccc;
+    display: block;
+  }
+  .gallery-thumbs span.on { background: #333; }
+
+  /* Badge */
+  .badge-row { margin-bottom: 10px; }
+  .badge {
+    display: inline-block;
+    background: #1a5eb5;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    padding: 4px 12px;
+    border-radius: 3px;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 17px;
+    background: #28C76F;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background .15s;
+  }
+  .btn-primary:active { background: #22a85d; }
+  .btn-primary svg {
+    width: 18px; height: 18px;
+    fill: none; stroke: #fff;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  /* Presale container */
+  .presale-container {
+    background: #FFF200;
+    margin: 16px 0;
+    padding: 4px 14px;
+    width: 290px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    line-height: 1.5;
+  }
+
+  /* Info box */
+  .info-box {
+    background: #F4F3F8;
+    border-left: 3px solid #f5c800;
+    border-radius: 0 4px 4px 0;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .info-box strong { color: #111; }
+
+  /* Price */
+  .price-area {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .price-main {
+    font-size: 28px;
+    font-weight: bold;
+    color: #111;
+    line-height: 1;
+    letter-spacing: -.5px;
+    white-space: nowrap;
+  }
+  .price-or {
+    font-size: 12px;
+    color: #888;
+    white-space: nowrap;
+  }
+  .price-or s { color: #aaa; }
+
+  /* Quantity */
+  .qty-wrap { margin-bottom: 14px; }
+  .qty-box {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+  }
+  .qty-box button {
+    background: #fff;
+    border: none;
+    font-size: 22px;
+    height: 44px;
+    flex: 0 0 52px;
+    cursor: pointer;
+    color: #555;
+    display: flex; align-items: center; justify-content: center;
+    user-select: none;
+    transition: background .12s;
+  }
+  .qty-box button:active { background: #f0f0f0; }
+  .qty-box input {
+    flex: 1;
+    height: 44px;
+    text-align: center;
+    border: none;
+    border-left: 1.5px solid #ddd;
+    border-right: 1.5px solid #ddd;
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    background: #fff;
+    outline: none;
+    -moz-appearance: textfield;
+  }
+  .qty-box input::-webkit-outer-spin-button,
+  .qty-box input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+  /* Frete */
+  .frete-wrap {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: #fff;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .frete-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    cursor: pointer;
+    user-select: none;
+    background: #fff;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+  .frete-header svg.truck-icon {
+    width: 22px; height: 22px;
+    fill: none; stroke: #555;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+  .frete-label {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+  }
+  .frete-chevron {
+    flex-shrink: 0;
+    transition: transform .22s ease;
+  }
+  .frete-chevron svg {
+    width: 16px; height: 16px;
+    fill: none; stroke: #888;
+    stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .frete-wrap.open .frete-chevron { transform: rotate(180deg); }
+
+  .frete-body {
+    display: none;
+    padding: 4px 14px 14px;
+    border-top: 1px solid #ebebeb;
+  }
+  .frete-wrap.open .frete-body { display: block; }
+
+  .frete-input-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+  }
+  .frete-cep-input {
+    flex: 1;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #333;
+    outline: none;
+    background: #fafafa;
+  }
+  .frete-cep-input:focus { border-color: #888; }
+  .frete-calc-btn {
+    padding: 9px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a5eb5;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .12s;
+    min-width: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .frete-calc-btn:active { background: #f0f0f8; }
+  .frete-calc-btn:disabled { cursor: default; opacity: 1; }
+
+  /* spinner */
+  .spinner {
+    width: 16px; height: 16px;
+    border: 2.5px solid #c8daf5;
+    border-top-color: #1a5eb5;
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+    flex-shrink: 0;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .frete-cep-link {
+    font-size: 12px;
+    color: #1a5eb5;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .frete-cep-link:hover { text-decoration: underline; }
+
+  .frete-result {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #f7f7f7;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+    margin-top: 4px;
+  }
+  .frete-result.visible { display: flex; }
+  .frete-result svg {
+    width: 20px; height: 20px;
+    fill: none; stroke: #555;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+  .frete-result-info { flex: 1; }
+  .frete-result-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #222;
+  }
+  .frete-result-days {
+    font-size: 11px;
+    color: #666;
+    margin-top: 1px;
+  }
+  .frete-result-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2e9c4a;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider { height: 8px; background: #f2f2f2; }
+
+  /* ─── DETAILS TABLE ─── */
+  .details-section { padding: 16px 14px; background: #fff; }
+  .section-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f5c800;
+  }
+  .det-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 13px;
+  }
+  .det-row:last-child { border-bottom: none; }
+  .det-k { color: #666; flex: 0 0 55%; }
+  .det-v { color: #111; font-weight: 600; text-align: right; }
+
+  /* ─── NEWSLETTER ─── */
+  .newsletter {
+    background: #1a1a1a;
+    padding: 22px 14px;
+    border-top: 3px solid #f5c800;
+  }
+  .newsletter .nl-title {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #f5c800;
+    margin-bottom: 3px;
+  }
+  .newsletter .nl-sub {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 16px;
+  }
+  .nl-input {
+    width: 100%;
+    padding: 11px 12px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    color: #eee;
+    font-size: 13px;
+    outline: none;
+    margin-bottom: 9px;
+    -webkit-appearance: none;
+  }
+  .nl-input::placeholder { color: #666; }
+  .nl-input:focus { border-color: #f5c800; }
+
+  .nl-group-label {
+    font-size: 12px;
+    color: #aaa;
+    margin: 12px 0 8px;
+  }
+  .nl-checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 10px;
+    margin-bottom: 14px;
+  }
+  .nl-check {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  .nl-check input[type="checkbox"] {
+    width: 15px; height: 15px;
+    accent-color: #f5c800;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .nl-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 11.5px;
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+  .nl-privacy input[type="checkbox"] {
+    width: 14px; height: 14px;
+    accent-color: #f5c800;
+    margin-top: 1px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .nl-privacy a { color: #f5c800; text-decoration: none; }
+
+  .btn-nl {
+    width: 100%;
+    padding: 13px;
+    background: #f5c800;
+    color: #111;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: .4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .btn-nl:active { background: #e0b400; }
+
+  /* ─── VENDA PANINI ─── */
+  .venda-section {
+    background: #fff;
+    padding: 20px 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .venda-section img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: #111;
+    color: #bbb;
+    padding: 22px 14px 0;
+  }
+  .footer-col { margin-bottom: 22px; }
+  .footer-col h4 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #333;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; }
+  .footer-col ul li a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .footer-col ul li a:hover { color: #f5c800; }
+
+  .footer-bottom {
+    background: #000;
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 10.5px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0 -14px;
+  }
+
+  /* ─── FIXED BUY BAR ─── */
+  .fixed-buy-bar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    z-index: 150;
+    box-shadow: 0 -2px 10px rgba(0,0,0,.12);
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .fixed-buy-bar.hidden {
+    transform: translateX(-50%) translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fixed-bar-price { flex: 1; }
+  .fixed-bar-price .fbar-main {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+    line-height: 1.1;
+  }
+  .fixed-bar-price .fbar-or {
+    font-size: 11px;
+    color: #888;
+  }
+  .fixed-bar-price .fbar-or s { color: #bbb; }
+  .fixed-bar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: #28C76F;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s;
+    flex-shrink: 0;
+  }
+  .fixed-bar-btn:active { background: #22a85d; }
+  .fixed-bar-btn svg {
+    width: 16px; height: 16px;
+    fill: none; stroke: #fff;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* scroll bar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #f1f1f1; }
+  ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+
+  /* ─── HAMBURGER ─── */
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 6px 4px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all .25s;
+  }
+
+  /* ─── OVERLAY ─── */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 300;
+    transition: opacity .25s;
+  }
+  .menu-overlay.open { display: block; }
+
+  /* ─── SIDE DRAWER ─── */
+  .side-menu {
+    position: fixed;
+    top: 0; left: 0;
+    width: 207px;
+    height: 100%;
+    background: #252933;
+    z-index: 400;
+    transform: translateX(-100%);
+    transition: transform .28s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .side-menu.open { transform: translateX(0); }
+
+  /* top white bar */
+  .sm-topbar {
+    background: #fff;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px 0 10px;
+    flex-shrink: 0;
+  }
+  .sm-logo-box {
+    background: #f5c800;
+    padding: 6px 8px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+  }
+  .sm-logo-box img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+  .sm-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
+  .sm-close svg {
+    width: 20px; height: 20px;
+    stroke: #333;
+    stroke-width: 2;
+    stroke-linecap: round;
+    fill: none;
+  }
+
+  /* body of menu */
+  .sm-body {
+    padding: 16px 0 24px;
+    flex: 1;
+  }
+
+  /* section label */
+  .sm-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8a8f9c;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 14px;
+    margin-bottom: 6px;
+  }
+
+  /* menu item base */
+  .sm-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s;
+    min-height: 36px;
+  }
+  .sm-item:active { background: rgba(255,255,255,.06); }
+
+  /* icon slot */
+  .sm-icon {
+    width: 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sm-icon svg {
+    width: 16px; height: 16px;
+    fill: none;
+    stroke: #fff200;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* text */
+  .sm-text {
+    flex: 1;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .sm-text.yellow { color: #fff200; }
+
+  /* external link icon */
+  .sm-ext {
+    width: 11px; height: 11px;
+    flex-shrink: 0;
+  }
+  .sm-ext svg {
+    width: 11px; height: 11px;
+    fill: none;
+    stroke: #fff200;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* chevron */
+  .sm-chevron {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-left: 4px;
+  }
+  .sm-chevron svg {
+    width: 13px; height: 13px;
+    fill: none;
+    stroke: #fff200;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* white items (no icon) */
+  .sm-item .sm-text.white { color: #fff; }
+
+  /* divider */
+  .sm-divider {
+    height: 1px;
+    background: rgba(255,255,255,.07);
+    margin: 6px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ OVERLAY ═══════════ -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<!-- ═══════════ SIDE MENU ═══════════ -->
+<nav class="side-menu" id="sideMenu" aria-label="Menu principal">
+
+  <!-- Top white bar -->
+  <div class="sm-topbar">
+    <div class="sm-logo-box">
+      <img src="images/imgi_1_panini-logo_2_2_1.png" alt="Panini">
+    </div>
+    <button class="sm-close" onclick="closeMenu()" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="sm-body">
+
+    <!-- Área do cliente -->
+    <div class="sm-label">Área do Cliente</div>
+
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-icon">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      </span>
+      <span class="sm-text yellow">Lista de desejos</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </span>
+      <span class="sm-text yellow">
+        Atendimento ao cliente
+        <span class="sm-ext"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+      </span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+
+    <div class="sm-divider"></div>
+
+    <!-- Itens principais -->
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Assinaturas Panini</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Saldão</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Novidades</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Marvel Comics</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">DC Comics</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Panini Comics</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Panini Books</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Planet Mangá</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">MSP</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Colecionáveis</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+    <a href="https://panini.com.br/" class="sm-item">
+      <span class="sm-text white">Conheça Mais</span>
+      <span class="sm-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></span>
+    </a>
+
+  </div>
+</nav>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <button class="hamburger" onclick="openMenu()" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="logo-wrap">
+      <img class="logo-img" src="images/imgi_1_panini-logo_2_2_1.png" alt="Panini">
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="icon-btn" aria-label="Buscar">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+    </button>
+    <button class="icon-btn" aria-label="Carrinho">
+      <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ BREADCRUMB ═══════════ -->
+<nav class="breadcrumb" aria-label="Navegação">
+  <a href="#">Home</a><span class="sep">›</span>
+  <a href="#">Copa Do Mundo 2026</a><span class="sep">›</span>
+  <strong>Álbum Capa Dura - FIFA WORLD CUP 2026™</strong>
+</nav>
+
+<!-- ═══════════ PRODUCT ═══════════ -->
+<main class="product-wrap">
+
+  <h1 class="product-title">Kit Box Álbum Copa Do Mundo 2026 Capa Dura +350 Figurinhas</h1>
+
+  <!-- Gallery / Product Image -->
+  <div class="gallery" id="gallery">
+    <span class="gallery-badge">Pré-venda</span>
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-slide">
+        <img src="images/Design sem nome (45).png" alt="Kit Box Álbum Copa Do Mundo 2026 - Imagem 1">
+      </div>
+      <div class="gallery-slide">
+        <img src="images/imgi_36_D_NQ_NP_2X_984430-MLB110318720046_052026-F.webp" alt="Kit Box Álbum Copa Do Mundo 2026 - Imagem 2">
+      </div>
+    </div>
+    <div class="gallery-dots" id="galleryDots">
+      <span class="on" onclick="goSlide(0)"></span>
+      <span onclick="goSlide(1)"></span>
+    </div>
+  </div>
+
+  <div class="presale-container"><span>Pré-venda com previsão de envio a partir do dia 11 de Mai/26.</span></div>
+
+  <!-- Description text -->
+  <div class="info-box">
+    As emoções do maior espetáculo do mundo merecem o maior álbum de figurinhas de todos os tempos! Uma coleção completa, com todas as seleções participantes, ícones especiais e todos os detalhes para você acompanhar de pertinho a disputa pela taça da Copa do Mundo de FIFA 2026.
+  </div>
+
+  <!-- Price -->
+  <div class="price-area">
+    <span class="price-main">R$ 79,90</span>
+    <span class="price-or">ou 2 x R$39,95</span>
+  </div>
+
+  <!-- Quantity -->
+  <div class="qty-wrap">
+    <div class="qty-box">
+      <button onclick="adjQty(-1)" aria-label="Diminuir">−</button>
+      <input type="number" id="qty" value="1" min="1" max="99" readonly aria-label="Quantidade">
+      <button onclick="adjQty(1)" aria-label="Aumentar">+</button>
+    </div>
+  </div>
+
+  <!-- Add to cart -->
+  <button class="btn-primary" id="mainBuyBtn" onclick="location.href='carrinho.html'">
+    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    COMPRAR
+  </button>
+
+  <!-- Calcular Frete accordion -->
+  <div class="frete-wrap" id="freteWrap">
+    <button class="frete-header" onclick="toggleFrete()" aria-expanded="false" aria-controls="freteBody">
+      <svg class="truck-icon" viewBox="0 0 24 24">
+        <rect x="1" y="3" width="15" height="13" rx="1"/>
+        <path d="M16 8h4l3 4.5V20h-7V8z"/>
+        <circle cx="5.5" cy="18.5" r="2.5"/>
+        <circle cx="18.5" cy="18.5" r="2.5"/>
+      </svg>
+      <span class="frete-label">Calcular Frete</span>
+      <span class="frete-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    </button>
+
+    <div class="frete-body" id="freteBody">
+      <div class="frete-input-row">
+        <input class="frete-cep-input" type="tel" id="cepInput" placeholder="_ _ _ _ _ - _ _ _" maxlength="9" inputmode="numeric">
+        <button class="frete-calc-btn" onclick="calcularFrete()">Calcular</button>
+      </div>
+      <a href="https://buscacepinter.correios.com.br/" target="_blank" class="frete-cep-link">Não sei meu CEP</a>
+
+      <div class="frete-result" id="freteResult">
+        <svg viewBox="0 0 24 24">
+          <rect x="1" y="3" width="15" height="13" rx="1"/>
+          <path d="M16 8h4l3 4.5V20h-7V8z"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+        <div class="frete-result-info">
+          <div class="frete-result-name">Normal</div>
+          <div class="frete-result-days">até 4 dias úteis</div>
+        </div>
+        <span class="frete-result-price">Grátis</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══════════ DETAILS ═══════════ -->
+<div class="divider"></div>
+<section class="details-section">
+  <h2 class="section-title">Detalhes do Produto</h2>
+  <div class="det-row"><span class="det-k">Referência</span><span class="det-v">005460AHC3BR</span></div>
+  <div class="det-row"><span class="det-k">Ano de publicação</span><span class="det-v">2026</span></div>
+  <div class="det-row"><span class="det-k">Quantidade de páginas</span><span class="det-v">0</span></div>
+  <div class="det-row"><span class="det-k">Mês</span><span class="det-v">Maio</span></div>
+  <div class="det-row"><span class="det-k">Encadernação</span><span class="det-v">Não disponível</span></div>
+  <div class="det-row"><span class="det-k">Coleção</span><span class="det-v">WORLD CUP 2026</span></div>
+  <div class="det-row"><span class="det-k">Classificação etária</span><span class="det-v">3 anos</span></div>
+</section>
+
+<!-- ═══════════ NEWSLETTER ═══════════ -->
+<div class="divider"></div>
+<section class="newsletter">
+  <div class="nl-title">Newsletter</div>
+  <div class="nl-sub">Receba ofertas e novidades da Panini</div>
+
+  <input class="nl-input" type="text" placeholder="Digite seu nome" autocomplete="name">
+  <input class="nl-input" type="email" placeholder="E-mail" autocomplete="email">
+  <input class="nl-input" type="tel" placeholder="(00) 00000-0000" autocomplete="tel">
+
+  <div class="nl-group-label">Escolha os seus favoritos</div>
+  <div class="nl-checks">
+    <label class="nl-check"><input type="checkbox"> Marvel</label>
+    <label class="nl-check"><input type="checkbox"> DC Comics</label>
+    <label class="nl-check"><input type="checkbox"> Panini Comics</label>
+    <label class="nl-check"><input type="checkbox"> Planet Mangá</label>
+    <label class="nl-check"><input type="checkbox"> Turma da Mônica</label>
+    <label class="nl-check"><input type="checkbox"> Colecionáveis</label>
+  </div>
+
+  <label class="nl-privacy">
+    <input type="checkbox">
+    <span>Desejo receber informativos e promoções da Panini e aceito a
+      <a href="#">política de privacidade</a>.
+    </span>
+  </label>
+
+  <button class="btn-nl">Enviar</button>
+</section>
+
+<!-- ═══════════ VENDA PANINI ═══════════ -->
+<div class="divider"></div>
+<section class="venda-section">
+  <img src="images/imgi_1_panini-logo_2_2_1.png" alt="Panini">
+  <img src="images/venda-logo.svg" alt="Venda Panini">
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+
+  <div class="footer-col">
+    <h4>Suas Compras</h4>
+    <ul>
+      <li><a href="#">Login / Registro</a></li>
+      <li><a href="#">Termos e Condições - Prazos de Entrega</a></li>
+      <li><a href="#">Métodos de pagamento</a></li>
+      <li><a href="#">Perguntas frequentes</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Serviços para Você</h4>
+    <ul>
+      <li><a href="#">Regulamentos</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+      <li><a href="#">Política de Cookies</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Panini</h4>
+    <ul>
+      <li><a href="#">Panini Group</a></li>
+      <li><a href="#">Panini Collectors</a></li>
+      <li><a href="#">Adrenalyn XL™</a></li>
+      <li><a href="#">Plataforma Torcida Panini</a></li>
+      <li><a href="#">MyPanini™</a></li>
+      <li><a href="#">Trabalhe Conosco</a></li>
+      <li><a href="#">Relatório Igualdade Salarial</a></li>
+      <li><a href="#">Mapa do Site</a></li>
+      <li><a href="#">Redes Sociais</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Assinaturas</h4>
+    <ul>
+      <li><a href="#">Trocas e Devoluções</a></li>
+      <li><a href="#">Assinaturas Corporativas</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+      <li><a href="#">Contrato de Venda de Assinaturas</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-bottom">
+    Panini Brasil Ltda. CNPJ 58.722.058/01<br>
+    Alameda Caiapós, 423, Tamboré 06460-110
+  </div>
+</footer>
+
+<script>
+/* Quantity control */
+function adjQty(d) {
+  const el = document.getElementById('qty');
+  let v = parseInt(el.value, 10) + d;
+  if (v < 1) v = 1;
+  if (v > 99) v = 99;
+  el.value = v;
+}
+
+/* Gallery carousel */
+function goSlide(index) {
+  const track = document.getElementById('galleryTrack');
+  const dots  = document.querySelectorAll('#galleryDots span');
+  track.scrollTo({ left: track.offsetWidth * index, behavior: 'smooth' });
+  dots.forEach((d, i) => d.classList.toggle('on', i === index));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('galleryTrack');
+  const dots  = document.querySelectorAll('#galleryDots span');
+  if (!track) return;
+
+  /* update dots on scroll */
+  track.addEventListener('scroll', function() {
+    const index = Math.round(track.scrollLeft / track.offsetWidth);
+    dots.forEach((d, i) => d.classList.toggle('on', i === index));
+  }, { passive: true });
+
+  /* drag-to-scroll (mouse) */
+  let isDragging = false, startX = 0, scrollStart = 0;
+  track.addEventListener('mousedown', e => {
+    isDragging = true; startX = e.pageX; scrollStart = track.scrollLeft;
+    track.style.cursor = 'grabbing';
+  });
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    track.scrollLeft = scrollStart - (e.pageX - startX);
+  });
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.cursor = 'grab';
+    const index = Math.round(track.scrollLeft / track.offsetWidth);
+    goSlide(index);
+  });
+});
+
+/* Frete accordion */
+function toggleFrete() {
+  const wrap = document.getElementById('freteWrap');
+  const btn  = wrap.querySelector('.frete-header');
+  const open = wrap.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+  if (!open) {
+    document.getElementById('freteResult').classList.remove('visible');
+    document.getElementById('cepInput').value = '';
+  }
+}
+
+function calcularFrete() {
+  const cep = document.getElementById('cepInput').value.replace(/\D/g,'');
+  if (cep.length < 8) {
+    document.getElementById('cepInput').style.borderColor = '#e53935';
+    document.getElementById('cepInput').focus();
+    return;
+  }
+  document.getElementById('cepInput').style.borderColor = '';
+
+  const btn = document.querySelector('.frete-calc-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>';
+
+  setTimeout(function() {
+    btn.disabled = false;
+    btn.innerHTML = 'Calcular';
+    document.getElementById('freteResult').classList.add('visible');
+  }, 1500);
+}
+
+/* CEP mask */
+document.addEventListener('DOMContentLoaded', function() {
+  const cepInput = document.getElementById('cepInput');
+  if (cepInput) {
+    cepInput.addEventListener('input', function() {
+      let v = this.value.replace(/\D/g,'').slice(0,8);
+      if (v.length > 5) v = v.slice(0,5) + '-' + v.slice(5);
+      this.value = v;
+      this.style.borderColor = '';
+    });
+    cepInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') calcularFrete();
+    });
+  }
+});
+
+/* Fixed buy bar — show only when main button is off-screen */
+document.addEventListener('DOMContentLoaded', function () {
+  const mainBtn = document.getElementById('mainBuyBtn');
+  const fixedBar = document.getElementById('fixedBuyBar');
+  if (!mainBtn || !fixedBar) return;
+
+  const observer = new IntersectionObserver(function (entries) {
+    const visible = entries[0].isIntersecting;
+    fixedBar.classList.toggle('hidden', visible);
+  }, { threshold: 0.1 });
+
+  observer.observe(mainBtn);
+});
+
+/* Side menu */
+function openMenu() {
+  document.getElementById('sideMenu').classList.add('open');
+  document.getElementById('menuOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  document.getElementById('sideMenu').classList.remove('open');
+  document.getElementById('menuOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeMenu();
+});
+</script>
+
+<!-- ═══════════ FIXED BUY BAR ═══════════ -->
+<div class="fixed-buy-bar hidden" id="fixedBuyBar">
+  <div class="fixed-bar-price">
+    <div class="fbar-main">R$ 79,90</div>
+    <div class="fbar-or">ou <s>2x R$39,95</s></div>
+  </div>
+  <button class="fixed-bar-btn" onclick="location.href='carrinho.html'">
+    <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+    COMPRAR
+  </button>
+</div>
+
+</body>
+</html>
