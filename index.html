@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Copa Do Mundo 2026 - Álbum Capa Dura Prata - FIFA WORLD CUP 2026™</title>
+<script>
+  window.tikTokPixelId = "69eb70ea54b25d3ac4435855";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel-tiktok.js");
+  document.head.appendChild(a);
+</script>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -713,6 +728,26 @@
   }
   .menu-overlay.open { display: block; }
 
+  /* ─── PAGE LOADING OVERLAY ─── */
+  .page-loading {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+  .page-loading.show { display: flex; }
+  .page-loading-spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid rgba(40,199,111,.25);
+    border-top-color: #28C76F;
+    border-radius: 50%;
+    animation: spin .75s linear infinite;
+  }
+
   /* ─── SIDE DRAWER ─── */
   .side-menu {
     position: fixed;
@@ -1036,7 +1071,7 @@
   </div>
 
   <!-- Add to cart -->
-  <button class="btn-primary" id="mainBuyBtn" onclick="location.href='carrinho.html'">
+  <button class="btn-primary" id="mainBuyBtn" onclick="goToCart()">
     <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
     COMPRAR
   </button>
@@ -1280,6 +1315,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+/* Go to cart with loading overlay */
+function goToCart() {
+  document.getElementById('pageLoading').classList.add('show');
+  setTimeout(function() { location.href = 'carrinho.html'; }, 800);
+}
+
 /* Fixed buy bar — show only when main button is off-screen */
 document.addEventListener('DOMContentLoaded', function () {
   const mainBtn = document.getElementById('mainBuyBtn');
@@ -1311,12 +1352,16 @@ document.addEventListener('keydown', function(e) {
 </script>
 
 <!-- ═══════════ FIXED BUY BAR ═══════════ -->
+<div class="page-loading" id="pageLoading">
+  <div class="page-loading-spinner"></div>
+</div>
+
 <div class="fixed-buy-bar hidden" id="fixedBuyBar">
   <div class="fixed-bar-price">
     <div class="fbar-main">R$ 79,90</div>
     <div class="fbar-or">ou <s>2x R$39,95</s></div>
   </div>
-  <button class="fixed-bar-btn" onclick="location.href='carrinho.html'">
+  <button class="fixed-bar-btn" onclick="goToCart()">
     <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
     COMPRAR
   </button>
