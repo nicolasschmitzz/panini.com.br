@@ -1321,6 +1321,11 @@ function goToCart() {
   setTimeout(function() { location.href = 'carrinho.html'; }, 800);
 }
 
+window.addEventListener('pageshow', function (e) {
+  var overlay = document.getElementById('pageLoading');
+  if (overlay) overlay.classList.remove('show');
+});
+
 /* Fixed buy bar — show only when main button is off-screen */
 document.addEventListener('DOMContentLoaded', function () {
   const mainBtn = document.getElementById('mainBuyBtn');
