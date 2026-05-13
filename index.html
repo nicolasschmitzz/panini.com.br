@@ -1335,7 +1335,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const observer = new IntersectionObserver(function (entries) {
     const visible = entries[0].isIntersecting;
     fixedBar.classList.toggle('hidden', visible);
-  }, { threshold: 0.1 });
+  }, { threshold: 0.6, rootMargin: '0px 0px -60px 0px' });
 
   observer.observe(mainBtn);
 });
