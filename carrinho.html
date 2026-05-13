@@ -805,5 +805,76 @@ function limparCarrinho() {
 }
 </script>
 
+<script>
+/* ── ttclid persistence — preserva o parâmetro entre páginas do funil ── */
+(function () {
+  var KEY = 'ttclid';
+  var COOKIE_DAYS = 30;
+
+  function saveStorage(val) {
+    try { localStorage.setItem(KEY, val); } catch (e) {}
+    var expires = new Date(Date.now() + COOKIE_DAYS * 864e5).toUTCString();
+    document.cookie = KEY + '=' + encodeURIComponent(val) +
+      '; path=/; expires=' + expires + '; SameSite=Lax';
+  }
+
+  function readStorage() {
+    try {
+      var ls = localStorage.getItem(KEY);
+      if (ls) return ls;
+    } catch (e) {}
+    var m = document.cookie.match('(?:^|;)\\s*' + KEY + '=([^;]*)');
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var fromUrl = params.get(KEY);
+  if (fromUrl) saveStorage(fromUrl);
+
+  var ttclid = fromUrl || readStorage();
+  if (!ttclid) return;
+
+  function applyLink(el) {
+    if (!el || !el.href) return;
+    try {
+      var url = new URL(el.href, window.location.origin);
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+      url.searchParams.set(KEY, ttclid);
+      el.href = url.toString();
+    } catch (e) {}
+  }
+
+  function applyAll() {
+    document.querySelectorAll('a[href]').forEach(applyLink);
+  }
+
+  function watchDynamic() {
+    if (!window.MutationObserver) return;
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) {
+          if (node.nodeType !== 1) return;
+          if (node.tagName === 'A') applyLink(node);
+          if (node.querySelectorAll)
+            node.querySelectorAll('a[href]').forEach(applyLink);
+        });
+      });
+    }).observe(document.body || document.documentElement,
+               { childList: true, subtree: true });
+  }
+
+  function init() {
+    applyAll();
+    watchDynamic();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
 </body>
 </html>

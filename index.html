@@ -1367,5 +1367,103 @@ document.addEventListener('keydown', function(e) {
   </button>
 </div>
 
+
+<script>
+/* ── ttclid persistence — preserva o parâmetro entre páginas do funil ── */
+(function () {
+  var KEY = 'ttclid';
+  var COOKIE_DAYS = 30;
+
+  /* ---------- helpers de storage ---------- */
+  function saveStorage(val) {
+    try { localStorage.setItem(KEY, val); } catch (e) {}
+    var expires = new Date(Date.now() + COOKIE_DAYS * 864e5).toUTCString();
+    document.cookie = KEY + '=' + encodeURIComponent(val) +
+      '; path=/; expires=' + expires + '; SameSite=Lax';
+  }
+
+  function readStorage() {
+    try {
+      var ls = localStorage.getItem(KEY);
+      if (ls) return ls;
+    } catch (e) {}
+    var m = document.cookie.match('(?:^|;)\\s*' + KEY + '=([^;]*)');
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+
+  /* ---------- captura da URL ---------- */
+  var params = new URLSearchParams(window.location.search);
+  var fromUrl = params.get(KEY);
+  if (fromUrl) saveStorage(fromUrl);
+
+  var ttclid = fromUrl || readStorage();
+  if (!ttclid) return; // nenhum ttclid disponível, não faz nada
+
+  /* ---------- aplica em um único link ---------- */
+  function applyLink(el) {
+    if (!el || !el.href) return;
+    try {
+      var url = new URL(el.href, window.location.origin);
+      if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+      url.searchParams.set(KEY, ttclid);
+      el.href = url.toString();
+    } catch (e) {}
+  }
+
+  /* ---------- aplica em todos os links do DOM ---------- */
+  function applyAll() {
+    document.querySelectorAll('a[href]').forEach(applyLink);
+  }
+
+  /* ---------- observa links adicionados dinamicamente ---------- */
+  function watchDynamic() {
+    if (!window.MutationObserver) return;
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (m) {
+        m.addedNodes.forEach(function (node) {
+          if (node.nodeType !== 1) return;
+          if (node.tagName === 'A') applyLink(node);
+          if (node.querySelectorAll)
+            node.querySelectorAll('a[href]').forEach(applyLink);
+        });
+      });
+    }).observe(document.body || document.documentElement,
+               { childList: true, subtree: true });
+  }
+
+  /* ---------- sobrescreve goToCart para injetar ttclid ---------- */
+  function patchGoToCart() {
+    if (typeof window.goToCart !== 'function') return;
+    window.goToCart = function () {
+      var overlay = document.getElementById('pageLoading');
+      if (overlay) overlay.classList.add('show');
+      try {
+        var url = new URL('carrinho.html', window.location.href);
+        // preserva todos os params atuais e garante ttclid
+        new URLSearchParams(window.location.search).forEach(function (v, k) {
+          url.searchParams.set(k, v);
+        });
+        url.searchParams.set(KEY, ttclid);
+        setTimeout(function () { location.href = url.toString(); }, 800);
+      } catch (e) {
+        setTimeout(function () { location.href = 'carrinho.html'; }, 800);
+      }
+    };
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    applyAll();
+    watchDynamic();
+    patchGoToCart();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
 </body>
 </html>
